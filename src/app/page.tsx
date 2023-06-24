@@ -6,6 +6,7 @@ import { Content } from '@/components/Content/Content'
 import { RegistrationFormContainer } from '@/components/RegistrationFormContainer/RegistrationFormContainer'
 import { Title } from '@/components/ui-components/Title/Title'
 import { UIText } from '@/components/ui-components/UIText/UIText'
+import { Footer } from '@/components/Footer/Footer'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <UIText As={'p'} text={'Welcome to Ruix. dashboard Community'} />
         <RegistrationFormContainer />
       </Content>
+      <Footer />
     </Container>
   )
 }
