@@ -4,9 +4,11 @@ import styles from './RegistrationForm.module.scss'
 import { UIText } from '@/components/ui-components/UIText/UIText'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import clsx from 'clsx'
+import { FormService } from '@/components/services/form.service'
+import axios, { AxiosError } from 'axios'
 
 
-interface IUserRegData {
+export interface IUserRegData {
   name: string;
   email: string;
   password: string;
@@ -20,21 +22,18 @@ const isValisPasswordlMessage = 'Пароль должен содержать л
 export const RegistrationForm = () => {
   const { register, handleSubmit, formState: {errors}, reset, getValues } = useForm<IUserRegData>();
   const [isChecked, setIsChecked] = useState(false);
+  const [apiError, setApiError] = useState<string>('');
 
-  const onSubmit: SubmitHandler<IUserRegData> = (data) => {
-    console.log(data)
-    // reset();
+  const onSubmit: SubmitHandler<IUserRegData> = async (data) => {
+    try {
+      await FormService.registerUser(data)
+      console.log('Отправлено')
+    } catch (e) {
+      const error = e as AxiosError<Error>
+      setApiError(error.message)
+    }
+    reset();
   }
-
-
-  // useEffect(() => {
-  //   setIsChecked(getValues('rememberMe'))
-  // }, [getValues('rememberMe')])
-
-  const onClick = () => {
-    console.log(getValues('rememberMe'))
-  }
-
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -99,7 +98,13 @@ export const RegistrationForm = () => {
         <UIText text={'Remember Me'}/>
       </label>
       <button className={styles.button}>Register</button>
-      <button onClick={onClick}>check</button>
+
+      {apiError && (
+        <>
+          <div className={styles.error}>{apiError}</div>
+          <div className={styles.error}>Ошибка! Не удалось отправить данные</div>
+        </>
+      )}
     </form>
   )
 }
