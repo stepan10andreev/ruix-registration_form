@@ -3,10 +3,14 @@
 :root {
   --white:                    #FFFFFF;
   --black:                    #000000;
+  --black-light:              #272727;
   --input-placeholder-color:  #2E2E2E;
   --body-bg:                  rgb(35, 35, 35);
   --grey:                     #D2D2D2;
+  /* --grey-hover:               #a0a0a0; */
+  --grey-accent:              #a5a5a5;
   --yellow:                   #FEC00F;
+  --yellow-accent:            #cc9500;
 }
 
 body {

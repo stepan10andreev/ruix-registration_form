@@ -26,12 +26,23 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 19px;
+  transition: 0.3s;
 
   &::placeholder {
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
     color: var(--input-placeholder-color);
+  }
+
+  &:focus,
+  &:hover {
+    background-color: var(--grey);
+    outline: none;
+  }
+
+  &:active {
+    background-color: var(--grey-accent);
   }
 }
 
@@ -52,6 +63,18 @@
   line-height: 19px;
   color: var(--white);
   background-color: var(--black);
+  transition: 0.3s;
+
+  &:focus-visible,
+  &:hover {
+    outline: 1px solid var(--black);
+    outline-offset: 3px;
+  }
+  &:active {
+    outline: none;
+    color: var(--yellow);
+    background-color: var(--black-light);
+  }
 }
 
 
@@ -60,4 +83,5 @@
   align-items: center;
   justify-content: flex-start;
   justify-items: center;
+  gap: 3px;
 }

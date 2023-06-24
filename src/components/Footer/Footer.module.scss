@@ -5,9 +5,20 @@
   justify-content: center;
   gap: 2px;
   font-family: 'Urbanist';
+}
 
-  & > a {
-    font-weight: 600;
-    color: var(--yellow);
+
+.link {
+  font-weight: 600;
+  color: var(--yellow);
+  transition: 0.3s;
+
+  &:focus-visible,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--yellow-accent);
   }
 }

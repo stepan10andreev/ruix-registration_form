@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <UIText text={'Already have an account?'}/>
-      <Link href="/login"> Log in</Link>
+      <Link href="/login" className={styles.link}> Log in</Link>
     </footer>
   )
 }
