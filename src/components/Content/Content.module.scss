@@ -32,6 +32,11 @@
   .main {
     max-width: 80%;
     align-items: flex-start;
+
+    & > h1,
+    & > p{
+      color: antiquewhite;
+    }
   }
 }
 

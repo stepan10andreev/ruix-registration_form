@@ -23,6 +23,14 @@
   }
 }
 
+@media (max-width: 992px) {
+  .footer {
+    & > span {
+      color: antiquewhite;
+    }
+  }
+}
+
 @media (max-width: 576px) {
   .footer {
     max-width: 100%;
