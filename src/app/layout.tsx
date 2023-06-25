@@ -1,3 +1,4 @@
+import { Container } from '@/components/ui-components/Container/Container'
 import './globals.css'
 
 export const metadata = {
@@ -12,7 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Container>
+          {children}
+        </Container>
+        <div id='modal_root'></div>
+      </body>
     </html>
   )
 }

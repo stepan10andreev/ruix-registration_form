@@ -3,6 +3,6 @@ import { IUserRegData } from "../RegistrationFormContainer/RegistrationForm/Regi
 
 export const FormService = {
   async registerUser (data: IUserRegData) {
-    return axios.post(' http://localhost:5000/usersss', data)
+    return axios.post(' http://localhost:5000/users', data)
   }
 }

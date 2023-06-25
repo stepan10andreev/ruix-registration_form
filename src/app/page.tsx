@@ -10,7 +10,8 @@ import { Footer } from '@/components/Footer/Footer'
 
 export default function Home() {
   return (
-    <Container>
+    // <Container>
+    <>
       <Header />
       <Content>
         <Title text={'Welcome Ruix'}/>
@@ -18,6 +19,7 @@ export default function Home() {
         <RegistrationFormContainer />
       </Content>
       <Footer />
-    </Container>
+    </>
+    // </Container>
   )
 }
