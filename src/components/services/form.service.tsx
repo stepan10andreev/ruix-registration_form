@@ -1,5 +1,5 @@
 import axios from "axios"
-import { IUserRegData } from "../RegistrationFormContainer/RegistrationForm/RegistrationForm"
+import { IUserRegData } from "../RegistrationFormContainer/RegistrationFormContainer"
 
 export const FormService = {
   async registerUser (data: IUserRegData) {
