@@ -11,3 +11,15 @@
   border-radius: 60px;
   overflow: hidden;
 }
+
+@media (max-width: 992px) {
+  .container {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px;
+  }
+}

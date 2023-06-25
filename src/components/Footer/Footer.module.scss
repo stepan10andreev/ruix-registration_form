@@ -22,3 +22,9 @@
     color: var(--yellow-accent);
   }
 }
+
+@media (max-width: 576px) {
+  .footer {
+    max-width: 100%;
+  }
+}
